@@ -1,23 +1,19 @@
-public class bruxa extends heroi {
-    // Atributos únicos
-    public String feitico;
-    public double sabedoria;  // atributo único
+public class Bruxa extends Heroi {
+    private double sabedoria;
 
-    // Construtor derivado de herói
-    public bruxa(String nome, double pontosDeVida, double forca, double nivel, double experiencia, String feitico, double sabedoria){
-        super(nome, pontosDeVida, forca, nivel, experiencia);
-        this.feitico = feitico;
+    // Construtor 
+    public Bruxa(String nome, int pontosDeVida, int forca, int nivel, int experiencia, int expProximoNivel, double sorte, double sabedoria) {
+        super(nome, pontosDeVida, forca, nivel, experiencia, expProximoNivel, sorte);
         this.sabedoria = sabedoria;
     }
 
-    // Implementação métodos abstratos
     @Override
-    public String atacar(personagem alvo){
-        return "Lança o feitiço " + feitico + " no oponente, usando sabedoria de " + sabedoria + ".";
+    public String atacar(Personagem alvo) { 
+        return "Lança um feitiço no oponente.";
     }
 
     @Override
-    public String usarHabilidadeEspecial(personagem alvo){
-        return "Executa um feitiço poderoso aproveitando toda a sabedoria de " + sabedoria + ".";
+    public String usarHabilidadeEspecial(Personagem alvo) { 
+        return "Descobre a fraqueza do oponente usando a sabedoria de " + sabedoria + " e lança feitiço correspondente.";
     }
 }

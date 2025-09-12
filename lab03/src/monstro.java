@@ -1,17 +1,26 @@
-public abstract class monstro extends personagem{
-    //Atributo Adicional
-    public double xpConcedido;
+import java.util.ArrayList;
+import java.util.Random;
 
-    //Construtor derivado de personagem
-    public monstro(String nome, double pontosDeVida, double forca, double xpConcedido){
-        super(nome, pontosDeVida, forca);
+public abstract class Monstro extends Personagem {
+    protected int xpConcedido;
+    protected ArrayList<Arma> listaDeArmasParaLargar = new ArrayList<>(); //adição
+
+	//Construtor
+    public Monstro(String nome, int vida, int forca, int xpConcedido) {
+        super(nome, vida, forca);
         this.xpConcedido = xpConcedido;
     }
 
-    //Métodos
     @Override
-    public String exibirStatus(){
-        return "Nome: " + nome + ", pontos de Vida: " + pontosDeVida + ", força: " + forca
-        + ", xpConcedido: " + xpConcedido;
+    public void exibirStatus() {
+        super.exibirStatus();
+        System.out.println("XP concedido: " + xpConcedido);
+    }
+
+
+    public Arma largaArma() {
+        if (listaDeArmasParaLargar.isEmpty()) return null;
+        Random r = new Random();
+        return listaDeArmasParaLargar.get(r.nextInt(listaDeArmasParaLargar.size()));
     }
 }

@@ -1,13 +1,15 @@
-public class Ciclope extends monstro {
-    public double furia;  // atributo único
+public class Ciclope extends Monstro {
+    private double calor;
 
-    public Ciclope(String nome, double pontosDeVida, double forca, double xpConcedido, double furia) {
+    public Ciclope(String nome, int pontosDeVida, int forca, int xpConcedido, double calor) { // Corrigido parâmetro
         super(nome, pontosDeVida, forca, xpConcedido);
-        this.furia = furia;
+        this.calor = calor; 
+        
+        listaDeArmasParaLargar.add(new Laser("Laser Ocular", 12, 2));
     }
 
     @Override
-    public String atacar(personagem alvo) {
-        return "O Ciclope ataca " + alvo.nome + " com seu soco devastador, com fúria de " + furia + "!";
+    public String atacar(Personagem alvo) { 
+        return "O Ciclope ataca " + alvo.nome + " atirando laser pelo olho com calor de " + calor + "!";
     }
 }

@@ -1,13 +1,15 @@
-public class ElefantePsíquico extends monstro {
-    public double poderMental;  // atributo único
+public class ElefantePsíquico extends Monstro {
+    private final int poderMental;
 
-    public ElefantePsíquico(String nome, double pontosDeVida, double forca, double xpConcedido, double poderMental) {
+    public ElefantePsíquico(String nome, int pontosDeVida, int forca, int xpConcedido, int poderMental) {
         super(nome, pontosDeVida, forca, xpConcedido);
         this.poderMental = poderMental;
     }
 
     @Override
-    public String atacar(personagem alvo) {
-        return "O Elefante Psíquico ataca " + alvo.nome + " com ondas mentais poderosas de intensidade " + poderMental + "!";
+    public String atacar(Personagem alvo) {
+        int dano = forca + poderMental;
+        alvo.receberDano(dano);
+        return nome + " usa poderes psíquicos contra " + alvo.nome + " causando " + dano + " de dano!";
     }
 }

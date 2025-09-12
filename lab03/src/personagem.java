@@ -1,29 +1,34 @@
-public abstract class personagem {
-    //Atributos
-    public String nome;
-    public double pontosDeVida;
-    public double forca;
+public abstract class Personagem {
+    protected String nome;
+    protected int pontosDeVida;
+    protected int forca;
+    protected Arma arma;
 
-    //Construtor
-    public personagem(String nome, double pontosDeVida, double forca){
+    // Construtor
+    public Personagem(String nome, int pontosDeVida, int forca) { // Removido Arma arma
         this.nome = nome;
         this.pontosDeVida = pontosDeVida;
         this.forca = forca;
+        this.arma = null;
     }
 
-    //Métodos
-    public double receberDano(double dano){
-        return pontosDeVida = pontosDeVida - dano;
+    public boolean estaVivo() {
+        return pontosDeVida > 0;
     }
 
-    public String exibirStatus(){
-        return "Nome: " + nome + ", pontos de Vida: " + pontosDeVida + ", força: " + forca;
+    public void receberDano(int dano) {
+        pontosDeVida = pontosDeVida - dano;
     }
 
-    //método abstrato atacar
-    public abstract String atacar(personagem alvo);
+    public void exibirStatus() {
+        
+        System.out.println("Nome: " + nome + " | Pontos de vida: " + pontosDeVida + " | Força: " + forca);
+        if (arma != null) {
+            System.out.println("Arma: " + arma.nome + " (com dano extra: " + arma.dano + ")");
+        } else {
+            System.out.println("Arma: nenhuma");
+        }
+    }
+
+    public abstract String atacar(Personagem alvo); 
 }
-
-
-
-
