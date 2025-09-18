@@ -1,3 +1,4 @@
+/* 
 import java.util.ArrayList;
 
 public class ConstrutorDeCenario {
@@ -12,3 +13,4 @@ public class ConstrutorDeCenario {
         return fases;
     }
 }
+*/

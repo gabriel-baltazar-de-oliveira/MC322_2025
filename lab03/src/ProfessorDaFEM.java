@@ -1,15 +1,29 @@
-public class ProfessorDaFEM extends Monstro {
-    private double temor;
+import java.util.Arrays;
 
-    public ProfessorDaFEM(String nome, int pontosDeVida, int forca, int xpConcedido, double temor) {
-        super(nome, pontosDeVida, forca, xpConcedido);
-        this.temor = temor;
-        
-        listaDeArmasParaLargar.add(new Avaliacao("Avaliação Difícil", 8, 2));
+public class ProfessorDaFEM extends Monstro {
+
+    public ProfessorDaFEM() {
+        super("ProfessorDaFEM", 100, 20, 50, Arrays.asList(new AcaoAtaqueBasico()));
     }
 
     @Override
-    public String atacar(Personagem alvo) {
-        return "O Professor da FEM lança uma prova impossível em " + alvo.nome + ", causando temor de " + temor + "!";
+    public void atacar(Personagem alvo) {
+        acoes.get(0).executar(this, alvo);
+    }
+
+    @Override
+    public void usarHabilidadeEspecial(Personagem alvo) {
+        int dano = getForca() + 10;
+        alvo.receberDano(dano);
+        System.out.println(getNome() + " usou habilidade especial em " + alvo.getNome() +
+                           " causando " + dano + " de dano!");
+    }
+
+    @Override
+    public AcaoDeCombate escolherAcao(Combatente alvo) {
+        // Retorna a primeira ação e já executa
+        AcaoDeCombate acao = acoes.get(0);
+        acao.executar(this, (Personagem) alvo);
+        return acao;
     }
 }

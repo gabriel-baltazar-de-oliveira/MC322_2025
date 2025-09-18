@@ -1,15 +1,28 @@
-public class ElefantePsíquico extends Monstro {
-    private final int poderMental;
+import java.util.Arrays;
 
-    public ElefantePsíquico(String nome, int pontosDeVida, int forca, int xpConcedido, int poderMental) {
-        super(nome, pontosDeVida, forca, xpConcedido);
-        this.poderMental = poderMental;
+public class ElefantePsíquico extends Monstro {
+
+    public ElefantePsíquico() {
+        super("ElefantePsíquico", 150, 25, 60, Arrays.asList(new AcaoAtaqueBasico()));
     }
 
     @Override
-    public String atacar(Personagem alvo) {
-        int dano = forca + poderMental;
+    public void atacar(Personagem alvo) {
+        acoes.get(0).executar(this, alvo);
+    }
+
+    @Override
+    public void usarHabilidadeEspecial(Personagem alvo) {
+        int dano = getForca() + 15;
         alvo.receberDano(dano);
-        return nome + " usa poderes psíquicos contra " + alvo.nome + " causando " + dano + " de dano!";
+        System.out.println(getNome() + " usou ataque psíquico em " + alvo.getNome() +
+                           " causando " + dano + " de dano!");
+    }
+
+    @Override
+    public AcaoDeCombate escolherAcao(Combatente alvo) {
+        AcaoDeCombate acao = acoes.get(0);
+        acao.executar(this, (Personagem) alvo);
+        return acao;
     }
 }

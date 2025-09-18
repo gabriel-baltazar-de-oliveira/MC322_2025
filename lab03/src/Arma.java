@@ -1,13 +1,16 @@
-public abstract class Arma {
+public abstract class Arma implements Item {
     protected String nome;
     protected int dano;
-    protected int minNivel;
+    protected int alcance;
 
-	//Construtor
-    public Arma(String nome, int dano, int minNivel) {
+    public Arma(String nome, int dano, int alcance) {
         this.nome = nome;
         this.dano = dano;
-        this.minNivel = minNivel;
+        this.alcance = alcance;
     }
 
+    @Override
+    public String getNome() {
+        return nome;
+    }
 }

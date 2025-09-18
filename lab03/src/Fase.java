@@ -1,31 +1,14 @@
-import java.util.ArrayList;
+// Fase.java
 
-public class Fase {
-    private int nivel;
-    private String ambiente;
-    private ArrayList<Monstro> monstros = new ArrayList<>();
+public interface Fase {
+    // inicia a fase com o herói (pode preparar monstros, eventos, etc.)
+    void iniciar(Heroi heroi);
 
-    public Fase(int nivel) {
-        this.nivel = nivel;
-        this.ambiente = definirAmbiente(nivel);
-    }
+    // retorna true quando os objetivos da fase forem cumpridos
+    boolean isConcluida();
 
-    private String definirAmbiente(int numeroFase) {
-        int resto = numeroFase % 3;
-        switch (resto) {
-            case 0: return "campo";
-            case 1: return "floresta";
-            case 2: return "montanha";
-            default: return "campo"; 
-        }
-    }
-
-    public void adicionarMonstro(Monstro monstro) {
-        monstros.add(monstro);
-    }
-
-    // ADICIONAR GETTERS
-    public int getNivel() { return nivel; }
-    public String getAmbiente() { return ambiente; }
-    public ArrayList<Monstro> getMonstros() { return monstros; }
+    // descreve o tipo/ambiente do cenário (ex: "Catacumbas", "Ruínas")
+    String getTipoDeCenario();
+    String getDescricion();
+    public Iterable<Monstro> getMonstros();
 }

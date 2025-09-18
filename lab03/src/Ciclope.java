@@ -1,15 +1,28 @@
-public class Ciclope extends Monstro {
-    private double calor;
+import java.util.Arrays;
 
-    public Ciclope(String nome, int pontosDeVida, int forca, int xpConcedido, double calor) { // Corrigido parâmetro
-        super(nome, pontosDeVida, forca, xpConcedido);
-        this.calor = calor; 
-        
-        listaDeArmasParaLargar.add(new Laser("Laser Ocular", 12, 2));
+public class Ciclope extends Monstro {
+
+    public Ciclope() {
+        super("Ciclope", 200, 30, 70, Arrays.asList(new AcaoAtaqueBasico()));
     }
 
     @Override
-    public String atacar(Personagem alvo) { 
-        return "O Ciclope ataca " + alvo.nome + " atirando laser pelo olho com calor de " + calor + "!";
+    public void atacar(Personagem alvo) {
+        acoes.get(0).executar(this, alvo);
+    }
+
+    @Override
+    public void usarHabilidadeEspecial(Personagem alvo) {
+        int dano = getForca() + 20;
+        alvo.receberDano(dano);
+        System.out.println(getNome() + " lançou ataque devastador em " + alvo.getNome() +
+                           " causando " + dano + " de dano!");
+    }
+
+    @Override
+    public AcaoDeCombate escolherAcao(Combatente alvo) {
+        AcaoDeCombate acao = acoes.get(0);
+        acao.executar(this, (Personagem) alvo);
+        return acao;
     }
 }

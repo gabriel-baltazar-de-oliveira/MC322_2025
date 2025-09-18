@@ -1,19 +1,24 @@
 public class Bruxa extends Heroi {
-    private double sabedoria;
+    private final int inteligencia;
+    private final String nomeFeitico;
 
-    // Construtor 
-    public Bruxa(String nome, int pontosDeVida, int forca, int nivel, int experiencia, int expProximoNivel, double sorte, double sabedoria) {
-        super(nome, pontosDeVida, forca, nivel, experiencia, expProximoNivel, sorte);
-        this.sabedoria = sabedoria;
+    public Bruxa(String nome, int pontosDeVida, int forca, int nivel, int experiencia, int expProximoNivel, double sorte, int inteligencia, String nomeFeitico) {
+        super(nome, pontosDeVida, forca);
+        this.inteligencia = inteligencia;
+        this.nomeFeitico = nomeFeitico;
     }
 
     @Override
-    public String atacar(Personagem alvo) { 
-        return "Lança um feitiço no oponente.";
+    public void atacar(Personagem alvo) {
+        int dano = getForca();
+        alvo.receberDano(dano);
+        System.out.println(getNome() + " ataca o alvo com magia causando " + dano + " de dano!");
     }
 
     @Override
-    public String usarHabilidadeEspecial(Personagem alvo) { 
-        return "Descobre a fraqueza do oponente usando a sabedoria de " + sabedoria + " e lança feitiço correspondente.";
+    public void usarHabilidadeEspecial(Personagem alvo) {
+        int dano = getForca() + inteligencia * 2;
+        alvo.receberDano(dano);
+        System.out.println(getNome() + " lança o feitiço " + nomeFeitico + " causando " + dano + " de dano em " + alvo.getNome());
     }
 }

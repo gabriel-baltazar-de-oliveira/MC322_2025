@@ -1,49 +1,43 @@
-public abstract class Heroi extends Personagem {
-    protected int nivel;
-    protected int experiencia;
-    protected int expProximoNivel;
-    protected double sorte;
+import java.util.Arrays;
+import java.util.List;
 
-    // Construtor
-    public Heroi(String nome, int pontosDeVida, int forca, int nivel, int experiencia, int expProximoNivel, double sorte) {
-        super(nome, pontosDeVida, forca);
-        this.nivel = nivel;
-        this.experiencia = experiencia;
-        this.expProximoNivel = expProximoNivel;
-        this.sorte = sorte;
-    }
+public class Heroi extends Personagem implements Combatente {
 
-public void ganharExperiencia(int xp) {
-    experiencia += xp;
+    private final List<AcaoDeCombate> acoes;
 
-    while (experiencia >= expProximoNivel) {
-        experiencia -= expProximoNivel; // desconta o que foi usado para subir
-        subirDeNivel();
-    }
-}
-
-
-    private void subirDeNivel() {
-        nivel = nivel + 1;
-        expProximoNivel = expProximoNivel + 50;
-        forca = forca + 5;
-        pontosDeVida = pontosDeVida + 20;
-    }
-
-    public void equiparArma(Arma nova) {
-        if (nivel >= nova.minNivel) {
-            arma = nova;
-            System.out.println(nome + " equipou " + nova.nome);
-        } else {
-            System.out.println(nome + " não tem nível para usar " + nova.nome);
-        }
+    public Heroi(String nome, int vidaMaxima, int forca) {
+        super(nome, vidaMaxima, forca);
+        // Inicializa a lista de ações com Ataque Básico
+        this.acoes = Arrays.asList(new AcaoAtaqueBasico());
     }
 
     @Override
-    public void exibirStatus() {
-        super.exibirStatus();
-        System.out.println("Nível: " + nivel + " | XP: " + experiencia + "/" + expProximoNivel + " | Sorte: " + sorte);
+    public void atacar(Personagem alvo) {
+        // Usa a primeira ação da lista
+        acoes.get(0).executar(this, alvo);
+    }
+    
+    public int getVidaAtual() {
+        return this.pontosDeVida; // retorna o atributo de pontos de vida atual
+    }
+    @Override
+    public void usarHabilidadeEspecial(Personagem alvo) {
+        // Exemplo simples: dano extra
+        int dano = getForca() + 10;
+        alvo.receberDano(dano);
+        System.out.println(getNome() + " usou habilidade especial em " + alvo.getNome() +
+                           " causando " + dano + " de dano!");
     }
 
-    public abstract String usarHabilidadeEspecial(Personagem alvo);
+    @Override
+    public AcaoDeCombate escolherAcao(Combatente alvo) {
+        // Retorna sempre a primeira ação
+        AcaoDeCombate acao = acoes.get(0);
+        acao.executar(this, (Personagem) alvo);
+        return acao;
+    }
+
+    public List<AcaoDeCombate> getAcoes() {
+        return acoes;
+    }
 }
