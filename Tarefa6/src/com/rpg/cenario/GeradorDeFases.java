@@ -9,8 +9,6 @@ import java.util.List;
  * de fases para o jogador. Diferentes implementações podem criar fases
  * pré-definidas, aleatórias, ou baseadas em progressão do jogador.</p>
  * 
- * @author RPG Development Team
- * @version 1.0
  */
 public interface GeradorDeFases {
     

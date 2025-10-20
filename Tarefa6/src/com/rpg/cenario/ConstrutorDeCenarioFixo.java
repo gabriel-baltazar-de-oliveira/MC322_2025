@@ -14,32 +14,31 @@ public class ConstrutorDeCenarioFixo implements GeradorDeFases {
     public List<Fase> gerar(int numeroDeFases, Dificuldade dificuldade) {
         List<Fase> fases = new ArrayList<>();
         
-        // --- FASE 1 ---
+        // FASE 1
         Monstro ciclope = new Ciclope();
         ajustarStatusPorDificuldade(ciclope, dificuldade);
-        // A chamada agora passa os 3 argumentos corretos
         fases.add(new FaseDeCombate(
             new ArrayList<>(Arrays.asList(ciclope)),
             TipoCenario.BAR,
-            "Bar da esquina" // <-- O terceiro argumento (a descrição) estava faltando
+            "Bar da esquina" 
         ));
 
-        // --- FASE 2 ---
+        // FASE 2
         Monstro professor = new ProfessorDaFEM();
         ajustarStatusPorDificuldade(professor, dificuldade);
         fases.add(new FaseDeCombate(
             new ArrayList<>(Arrays.asList(professor)),
             TipoCenario.CASTELO,
-            "Um nobre castelo" // <-- O terceiro argumento (a descrição) estava faltando
+            "Um grande castelo" 
         ));
 
-        // --- FASE 3 ---
+        // FASE 3
         Monstro elefante = new ElefantePsiquico();
         ajustarStatusPorDificuldade(elefante, dificuldade);
         fases.add(new FaseDeCombate(
             new ArrayList<>(Arrays.asList(elefante)),
             TipoCenario.FACULDADE,
-            "Uma faculdade escura e úmida" // <-- O terceiro argumento (a descrição) estava faltando
+            "Faculdade escura e triste" 
         ));
         
         return fases;

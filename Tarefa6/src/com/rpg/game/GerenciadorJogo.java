@@ -9,8 +9,6 @@ import com.rpg.util.InputManager;
  * <p>Coordena a execução de batalhas tanto novas quanto carregadas,
  * integrando todos os sistemas implementados.</p>
  * 
- * @author RPG Development Team
- * @version 3.0
  */
 public class GerenciadorJogo {
 
@@ -33,7 +31,7 @@ public class GerenciadorJogo {
      * @param batalha Batalha carregada para execução
      */
     public static void executarBatalhaCarregada(Batalha batalha) {
-        System.out.println("\n🔄 Continuando Aventura...");
+        System.out.println("\n Continuando Aventura...");
         System.out.println("Progresso: Fase " + (batalha.getFaseAtual() + 1));
         
         executarBatalha(batalha);
@@ -57,7 +55,7 @@ public class GerenciadorJogo {
             System.out.println("\nSua aventura chegou ao fim...");
         }
         
-        System.out.println("\n=== VOLTANDO AO MENU PRINCIPAL ===");
+        System.out.println("\n VOLTANDO AO MENU PRINCIPAL ");
         InputManager.esperarEnter("Pressione ENTER para continuar...");
     }
 }

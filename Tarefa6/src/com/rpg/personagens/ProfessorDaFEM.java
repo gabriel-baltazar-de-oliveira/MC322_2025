@@ -7,7 +7,7 @@ public class ProfessorDaFEM extends Monstro {
     
     public ProfessorDaFEM() {
         // Construtor corrigido: nome, vidaMaxima, forca
-        super("Professor da FEM", 100, 10); // Pouca força física
+        super("Professor da FEM", 100, 10); 
         
         setChanceDrop(0.4); // 40% de chance
         adicionarPossivelDrop("VARINHA_INICIANTE");
@@ -28,7 +28,7 @@ public class ProfessorDaFEM extends Monstro {
 
     @Override
     public void usarHabilidadeEspecial(Personagem alvo) {
-        int dano = this.getDanoMagico() + 20; // Habilidade especial é ainda mais forte
+        int dano = this.getDanoMagico() + 20; // Habilidade espcial é ainda mais forte
         System.out.println(getNome() + " agenda a entrega de um PI para amanhã, causando " + dano + " de dano crítico!");
         alvo.receberDano(dano);
     }

@@ -11,7 +11,7 @@ import java.util.Random;
 /**
  * Classe base abstrata para todos os monstros do jogo.
  * Herda de Personagem e adiciona lógica de drops.
- * ATUALIZADA com anotações Jackson para polimorfismo.
+ * ATUALIZADA com anotações Jackson.
  */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME, 
@@ -19,7 +19,6 @@ import java.util.Random;
     property = "@type" // Nome do campo que guardará a "etiqueta" no JSON
 )
 @JsonSubTypes({
-    // Lista de todas as "etiquetas" e suas classes correspondentes
     @JsonSubTypes.Type(value = Ciclope.class, name = "ciclope"),
     @JsonSubTypes.Type(value = ElefantePsiquico.class, name = "elefantePsiquico"),
     @JsonSubTypes.Type(value = ProfessorDaFEM.class, name = "professorDaFEM")
@@ -36,7 +35,7 @@ public abstract class Monstro extends Personagem {
         this.possiveisDrops = new ArrayList<>();
     }
     
-    // O resto da classe continua igual...
+    // O resto da classe continua igua
     
     public void setChanceDrop(double chanceDrop) {
         this.chanceDrop = chanceDrop;

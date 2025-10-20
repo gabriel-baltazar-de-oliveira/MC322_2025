@@ -9,14 +9,12 @@ import com.rpg.util.InputManager;
  * <p>Atualizado para incluir a opção de carregar jogo salvo e
  * integrar com o novo sistema de batalha e persistência.</p>
  * 
- * @author RPG Development Team
- * @version 2.0
  */
 public class MenuPrincipal {
 
     public static void mostrarMenu() {
         while (true) {
-            System.out.println("\n\n=== TAREFA 6 RPG ===");
+            System.out.println("\n\n TAREFA 6 RPG ");
             System.out.println("[1] Novo Jogo");
             
             // Mostra opção de carregar apenas se existirem saves

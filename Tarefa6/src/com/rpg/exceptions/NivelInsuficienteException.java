@@ -11,8 +11,6 @@ package com.rpg.exceptions;
  *   <li>Acessar áreas restritas por nível</li>
  * </ul>
  * 
- * @author RPG Development Team
- * @version 1.0
  */
 public class NivelInsuficienteException extends Exception {
     

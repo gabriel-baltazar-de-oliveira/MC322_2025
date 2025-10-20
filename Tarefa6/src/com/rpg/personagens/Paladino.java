@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Paladino extends Heroi {
-    private final int fe; // atributo único
+    private final int fe; 
     private final String poderSagrado;
 
     public Paladino(String nome, int pontosDeVida, int forca, int fe, String poderSagrado) {

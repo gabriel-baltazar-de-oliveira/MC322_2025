@@ -44,7 +44,7 @@ public class InputManagerTest {
     void restoreStreams() {
         System.setIn(originalSystemIn);
         System.setOut(originalSystemOut);
-        InputManager.fecharScanner(); // Fecha o scanner para limpar estado
+        InputManager.fecharScanner(); // Fecha scanner
     }
 
     /**
@@ -82,7 +82,7 @@ public class InputManagerTest {
         String resultado = InputManager.lerString("Digite algo: ");
         assertEquals("Texto válido", resultado);
         
-        // Verifica se a mensagem de erro foi exibida
+        // Verifica mensagem de erro
         String output = outContent.toString();
         assertTrue(output.contains("Entrada vazia. Digite um texto válido."));
     }
@@ -139,10 +139,9 @@ public class InputManagerTest {
     @Test
     public void testEsperarEnter() {
         provideInput("\n");
-        // Este teste principalmente verifica que não há exceção
         InputManager.esperarEnter("Pressione ENTER...");
         
-        // Verifica se a mensagem foi exibida
+        // Verifica mensagem 
         String output = outContent.toString();
         assertTrue(output.contains("Pressione ENTER..."));
     }

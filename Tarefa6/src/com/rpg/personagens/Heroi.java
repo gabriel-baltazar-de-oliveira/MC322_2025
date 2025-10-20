@@ -8,8 +8,6 @@ import com.rpg.items.Item;
 /**
  * Classe que representa um herói controlado pelo jogador.
  *
- * @author RPG Development Team
- * @version 2.2
  */
 public class Heroi extends Personagem {
 
@@ -80,7 +78,6 @@ public class Heroi extends Personagem {
         }
     }
 
-    // --- MÉTODOS DA INTERFACE COMBATENTE QUE ESTAVAM FALTANDO ---
 
     @Override
     public int getDanoFisico() {
@@ -90,15 +87,15 @@ public class Heroi extends Personagem {
 
     @Override
     public int getDanoMagico() {
-        // Por enquanto, nosso herói não tem dano mágico.
+        // Por enquanto, herói não tem dano mágico.
         return 0;
     }
 
     @Override
     public int getDefesa() {
-        // Vamos dar ao herói uma defesa base de 5.
+        // Vamos dar ao herói uma defsa base de 5.
         // No futuro, isso poderia ser um atributo em Personagem.
         return 5;
     }
 
-} // <-- CHAVE FINAL QUE ESTAVA FALTANDO
+} 

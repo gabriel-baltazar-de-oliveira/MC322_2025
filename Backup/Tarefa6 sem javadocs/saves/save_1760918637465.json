@@ -1,0 +1,56 @@
+{
+  "heroi" : {
+    "nome" : "Herói",
+    "vidaMaxima" : 100,
+    "pontosDeVida" : 72,
+    "forca" : 30,
+    "defesa" : 5
+  },
+  "fases" : [ {
+    "@type" : "combate",
+    "monstros" : [ {
+      "@type" : "ciclope",
+      "nome" : "Ciclope",
+      "vidaMaxima" : 140,
+      "pontosDeVida" : 140,
+      "forca" : 24,
+      "defesa" : 5,
+      "possiveisDrops" : [ "ESPADA_BASICA" ]
+    } ],
+    "concluida" : false,
+    "tipoDeCenario" : "BAR",
+    "descricao" : "Bar da esquina"
+  }, {
+    "@type" : "combate",
+    "monstros" : [ {
+      "@type" : "professorDaFEM",
+      "nome" : "Professor da FEM",
+      "vidaMaxima" : 70,
+      "pontosDeVida" : 70,
+      "forca" : 8,
+      "defesa" : 5,
+      "possiveisDrops" : [ "VARINHA_INICIANTE" ]
+    } ],
+    "concluida" : false,
+    "tipoDeCenario" : "CASTELO",
+    "descricao" : "Um nobre castelo"
+  }, {
+    "@type" : "combate",
+    "monstros" : [ {
+      "@type" : "elefantePsiquico",
+      "nome" : "Elefante Psíquico",
+      "vidaMaxima" : 105,
+      "pontosDeVida" : 105,
+      "forca" : 4,
+      "defesa" : 5,
+      "possiveisDrops" : [ "VARINHA_INICIANTE", "ARCO_SIMPLES" ]
+    } ],
+    "concluida" : false,
+    "tipoDeCenario" : "FACULDADE",
+    "descricao" : "Uma faculdade escura e úmida"
+  } ],
+  "faseAtual" : 0,
+  "dificuldade" : "FACIL",
+  "jogoAtivo" : true,
+  "lootDisponivel" : [ ]
+}

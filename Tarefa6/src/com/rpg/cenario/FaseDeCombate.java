@@ -25,7 +25,7 @@ public class FaseDeCombate implements Fase {
     // Construtor vazio que o Jackson usa para carregar o jogo
     private FaseDeCombate() {}
 
-    // --- Implementação dos métodos da interface Fase ---
+    // Implementação dos métodos da interface Fase
 
     @Override
     public void iniciar(Heroi heroi) {

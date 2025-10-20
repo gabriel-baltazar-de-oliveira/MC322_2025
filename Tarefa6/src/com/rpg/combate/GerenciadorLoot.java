@@ -11,8 +11,6 @@ import java.util.List;
  * <p>Coordena o sistema de recompensas pós-combate usando
  * o sistema de agregação de itens.</p>
  * 
- * @author RPG Development Team
- * @version 1.0
  */
 public class GerenciadorLoot {
     

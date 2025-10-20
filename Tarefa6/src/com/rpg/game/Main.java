@@ -6,8 +6,6 @@ package com.rpg.game;
  * <p>Atualizada para a Tarefa 6 com verificação de saves
  * e inicialização do sistema de menus.</p>
  * 
- * @author RPG Development Team
- * @version 2.0
  */
 public class Main {
     

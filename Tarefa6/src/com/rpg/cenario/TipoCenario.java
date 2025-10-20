@@ -10,14 +10,14 @@ public enum TipoCenario {
             heroi.receberCura(10);
         }
     },
-    FACULDADE("Uma faculdade escura e úmida") {
+    FACULDADE("Uma faculdade escura e triste") {
         @Override
         public void aplicarEfeitos(Heroi heroi) {
             System.out.println("A escuridão drena sua energia, você perde 5 pontos de vida!");
             heroi.receberDano(5);
         }
     },
-    CASTELO("Um nobre castelo") {
+    CASTELO("Um grande castelo") {
         @Override
         public void aplicarEfeitos(Heroi heroi) {
             System.out.println("Você impõe respeito, sua força aumenta em 2");

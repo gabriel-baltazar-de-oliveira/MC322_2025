@@ -10,8 +10,6 @@ import java.util.NoSuchElementException;
  * entradas do usuário, garantindo que o programa não quebre
  * com entradas inválidas e forneça feedback adequado ao jogador.</p>
  * 
- * @author RPG Development Team
- * @version 1.0
  */
 public class InputManager {
     private static Scanner scanner = new Scanner(System.in);

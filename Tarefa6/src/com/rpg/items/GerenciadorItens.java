@@ -11,8 +11,6 @@ import java.util.Random;
  * monstros compartilhem referências a classes de itens em vez de
  * instâncias específicas.</p>
  * 
- * @author RPG Development Team
- * @version 1.0
  */
 public class GerenciadorItens {
     
@@ -20,14 +18,14 @@ public class GerenciadorItens {
     private static final Random random = new Random();
     
     static {
-        // Registra as classes de itens disponíveis no jogo
+        // Classes de itens disponívei no jogo
         registrarItem("ESPADA_BASICA", Espada.class);
         registrarItem("ARCO_SIMPLES", Arco.class);
         registrarItem("VARINHA_INICIANTE", Varinha.class);
     }
     
     /**
-     * Registra uma classe de item para uso no sistema de loot.
+     * Registra uma clase de item para uso no sistema de loot.
      * 
      * @param chave Chave única para o item
      * @param classeItem Classe do item a ser registrada
@@ -41,7 +39,7 @@ public class GerenciadorItens {
      * 
      * @param chave Chave do item desejado
      * @return Nova instância do item
-     * @throws RuntimeException Se não for possível instanciar o item
+     * @throws RuntimeException Se não for possível instaciar o item
      */
     public static Item criarItem(String chave) {
         Class<? extends Item> classeItem = itensRegistrados.get(chave);

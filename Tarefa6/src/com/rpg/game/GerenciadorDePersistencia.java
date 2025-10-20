@@ -18,8 +18,6 @@ import java.util.Comparator;
  * que objetos complexos como Batalha sejam salvos e carregados
  * de forma transparente e moderna.</p>
  *
- * @author RPG Development Team
- * @version 2.0
  */
 public class GerenciadorDePersistencia {
 
@@ -75,8 +73,8 @@ public static Batalha carregarBatalha(String nomeBatalha) {
         return batalha;
 
     } catch (Exception e) { // Mudei para pegar QUALQUER exceção
-        System.out.println("\n\n--- ERRO DETALHADO DO JACKSON ---");
-        e.printStackTrace(); // <<<<<<< ESTA LINHA É A MAIS IMPORTANTE
+        System.out.println("\n\n ERRO DETALHADO DO JACKSON ");
+        e.printStackTrace(); 
         System.out.println("---------------------------------\n\n");
         
         // Vamos lançar uma nova exceção para parar o jogo e garantir que a gente veja a mensagem.

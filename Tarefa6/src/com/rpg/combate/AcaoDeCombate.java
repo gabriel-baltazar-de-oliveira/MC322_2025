@@ -8,8 +8,6 @@ package com.rpg.combate;
  * O padrão Strategy é aplicado aqui para permitir diferentes comportamentos
  * de combate sem modificar as classes dos combatentes.</p>
  * 
- * @author RPG Development Team
- * @version 1.0
  */
 public interface AcaoDeCombate {
     

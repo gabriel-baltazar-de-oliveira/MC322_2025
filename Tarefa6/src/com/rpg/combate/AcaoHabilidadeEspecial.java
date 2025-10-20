@@ -6,8 +6,6 @@ package com.rpg.combate;
  * <p>Atualizada para funcionar com qualquer Combatente através
  * dos métodos padronizados da interface.</p>
  * 
- * @author RPG Development Team
- * @version 2.0
  */
 public class AcaoHabilidadeEspecial implements AcaoDeCombate {
     private final int bonusDano;
@@ -30,7 +28,7 @@ public class AcaoHabilidadeEspecial implements AcaoDeCombate {
         int danoBase = usuario.getDanoMagico();
         int defesaAlvo = alvo.getDefesa();
         
-        // Habilidades especiais ignoram parte da defesa
+        // Habilidades especiais sem a parte da defesa
         int danoFinal = Math.max(1, danoBase + bonusDano - (defesaAlvo / 4));
         
         alvo.receberDano(danoFinal);

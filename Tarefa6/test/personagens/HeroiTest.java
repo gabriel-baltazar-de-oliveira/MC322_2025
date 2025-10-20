@@ -126,7 +126,6 @@ public class HeroiTest {
         int vidaInicialAlvo = alvo.getPontosDeVida();
         heroi.usarHabilidadeEspecial(alvo);
         
-        // Habilidade especial deve causar mais dano que ataque básico
         assertTrue(alvo.getPontosDeVida() < vidaInicialAlvo - heroi.getForca(),
                   "Habilidade especial deve causar mais dano que ataque básico");
     }

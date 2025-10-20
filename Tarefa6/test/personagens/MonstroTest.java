@@ -141,7 +141,7 @@ public class MonstroTest {
         int vidaInicialAlvo = alvo.getPontosDeVida();
         monstro.usarHabilidadeEspecial(alvo);
         
-        // Habilidade especial deve causar dano significativo
+        // Habilidade especial causa dano significativo
         assertTrue(alvo.getPontosDeVida() < vidaInicialAlvo - monstro.getForca(),
                   "Habilidade especial deve causar mais dano que ataque básico");
     }

@@ -12,8 +12,6 @@ package com.rpg.exceptions;
  *   <li>Materiais para crafting</li>
  * </ul>
  * 
- * @author RPG Development Team
- * @version 1.0
  */
 public class RecursoInsuficienteException extends Exception {
     

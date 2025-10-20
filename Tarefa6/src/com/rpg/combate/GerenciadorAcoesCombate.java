@@ -10,15 +10,12 @@ import java.util.Map;
  * sejam compartilhadas entre todos os combatentes, seguindo o
  * princípio de agregação correta.</p>
  * 
- * @author RPG Development Team
- * @version 1.0
  */
 public class GerenciadorAcoesCombate {
     
     private static final Map<String, AcaoDeCombate> acoes = new HashMap<>();
     
     static {
-        // Inicializa as ações básicas compartilhadas
         acoes.put("ATAQUE_BASICO", new AcaoAtaqueBasico());
         acoes.put("HABILIDADE_FORTE", new AcaoHabilidadeEspecial("Ataque Poderoso", 15));
         acoes.put("HABILIDADE_FRACA", new AcaoHabilidadeEspecial("Golpe Rápido", 8));

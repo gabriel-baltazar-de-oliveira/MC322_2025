@@ -1,6 +1,6 @@
 package com.rpg.personagens;
 
-import com.fasterxml.jackson.annotation.JsonIgnore; // <-- IMPORT NECESSÁRIO
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.rpg.combate.AcaoDeCombate;
 import com.rpg.combate.Combatente;
 import com.rpg.combate.GerenciadorAcoesCombate;
@@ -53,21 +53,21 @@ public abstract class Personagem implements Combatente {
     public int getDefesa() { return this.defesa; }
     public void setDefesa(int defesa) { this.defesa = defesa; }
 
-    // --- MÉTODOS DE CÁLCULO IGNORADOS PELO SAVE ---
+    // MÉTODOS DE CÁLCULO IGNORADOS PELO SAVE
 
-    @JsonIgnore // <-- DIZ PARA O JACKSON IGNORAR ESTE MÉTODO AO SALVAR/CARREGAR
+    @JsonIgnore 
     @Override
     public int getDanoFisico() { 
         return this.forca; 
     }
 
-    @JsonIgnore // <-- DIZ PARA O JACKSON IGNORAR ESTE MÉTODO AO SALVAR/CARREGAR
+    @JsonIgnore 
     @Override
     public int getDanoMagico() { 
         return 0; 
     }
     
-    //------------------------------------------------
+    //-------------
 
     @Override
     public AcaoDeCombate escolherAcao(Combatente alvo) {

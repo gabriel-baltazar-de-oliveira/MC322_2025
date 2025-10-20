@@ -65,7 +65,7 @@ public class Batalha {
             }
         }
     }
-    System.out.println("----------------------------------------"); // Linha para separar
+    System.out.println("----------------------------------------"); 
         if (!heroi.estaVivo()) {
             System.out.println("Game Over - Seu herói foi derrotado!");
             jogoAtivo = false;
@@ -94,7 +94,7 @@ public class Batalha {
     System.out.println("Combate na fase " + numeroFase);
     System.out.println(heroi.getNome() + " enfrenta um " + monstroDaFase.getNome() + "!");
 
-    // 2. O dano agora vem DIRETAMENTE dos status do monstro
+    // 2. O dano vem DIRETAMENTE dos status do monstro
     // Usamos o getDanoFisico(), que já definimos que é a força por padrão.
     int danoMonstro = monstroDaFase.getDanoFisico(); 
 
@@ -104,7 +104,7 @@ public class Batalha {
     if (heroi.estaVivo()) {
         System.out.println(monstroDaFase.getNome() + " derrotado! Fase " + numeroFase + " concluída.");
         
-        // --- USANDO O GERENCIADOR DE LOOT DE VERDADE ---
+        // USANDO O GERENCIADOR DE LOOT DE VERDADE
         List<Monstro> monstrosDerrotados = new ArrayList<>();
         monstrosDerrotados.add(monstroDaFase);
 
@@ -120,7 +120,7 @@ public class Batalha {
 
     private void exibirMenuPosCombate() {
         while (true) {
-            System.out.println("\n=== MENU PÓS-COMBATE ===");
+            System.out.println("\n MENU PÓS-COMBATE ");
             System.out.println("[1] Interagir com o Loot");
             System.out.println("[2] Informações do Personagem");
             System.out.println("[3] Salvar Jogo");
@@ -152,7 +152,7 @@ public class Batalha {
         }
 
         while (true) {
-            System.out.println("\n=== ITENS ENCONTRADOS ===");
+            System.out.println("\n ITENS ENCONTRADO ");
             for (int i = 0; i < lootDisponivel.size(); i++) {
                 System.out.println("[" + (i + 1) + "] " + lootDisponivel.get(i).getNome());
             }
@@ -166,7 +166,6 @@ public class Batalha {
 
             Item itemEscolhido = lootDisponivel.get(opcao - 1);
 
-            // ASSUMINDO que sua classe Heroi tem um método para usar/equipar itens
             heroi.equiparItem(itemEscolhido); 
             System.out.println("Você usou/equipou: " + itemEscolhido.getNome());
             
@@ -183,7 +182,7 @@ public class Batalha {
     }
 
     private void exibirInfoPersonagem() {
-        System.out.println("\n=== INFORMAÇÕES DO PERSONAGEM ===");
+        System.out.println("\n INFORMAÇÕES DO PERSONAGEM ");
         heroi.exibirInfo(); // Supondo que o herói tenha um método para exibir suas próprias informações
         InputManager.esperarEnter("Pressione ENTER para voltar...");
     }
@@ -202,7 +201,7 @@ public class Batalha {
         }
     }
 
-    // ========== GETTERS e SETTERS ==========
+    // GETTERS e SETTERS
     public Heroi getHeroi() { return heroi; }
     public List<Fase> getFases() { return fases; }
     public int getFaseAtual() { return faseAtual; }

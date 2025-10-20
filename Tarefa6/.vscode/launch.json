@@ -9,8 +9,7 @@
             "type": "java",
             "name": "Current File",
             "request": "launch",
-            "mainClass": "${file}",
-            "console": "externalTerminal"
+            "mainClass": "${file}"
         },
         {
             "type": "java",
@@ -18,7 +17,7 @@
             "request": "launch",
             "mainClass": "com.rpg.game.Main",
             "projectName": "Tarefa6_1bd64d80",
-            "console": "integratedTerminal"
+            "console": "externalTerminal"
         }
     ]
 }

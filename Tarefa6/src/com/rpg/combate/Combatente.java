@@ -9,8 +9,6 @@ import com.rpg.personagens.Personagem;
  * que as ações de combate possam funcionar sem casting,
  * seguindo o princípio de agregação correta.</p>
  * 
- * @author RPG Development Team
- * @version 2.0
  */
 public interface Combatente {
     
