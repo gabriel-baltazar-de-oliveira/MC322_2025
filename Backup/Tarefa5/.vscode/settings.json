@@ -1,0 +1,14 @@
+{
+    "java.project.sourcePaths": [
+        "src"
+    ],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/jakarta.xml.bind-api-4.0.0.jar",
+        "lib/istack-commons-runtime-4.0.1.jar",
+        "lib/jakarta.activation-2.0.1.jar",
+        "lib/jaxb-core-4.0.0.jar",
+        "lib/ijaxb-runtime-4.0.0.jar",
+        "lib/junit-standalone-1.13.4.jar"
+    ]
+}
