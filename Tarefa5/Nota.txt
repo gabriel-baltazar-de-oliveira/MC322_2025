@@ -1,0 +1,1 @@
+Deixei uma build que usei para compilar os testes neste arquivo, mas retirei a lib do diretório e deixei como padrão procurar a biblioteca em Downloads.
